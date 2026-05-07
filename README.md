@@ -1,5 +1,7 @@
 Layoffs Data Cleaning Project
+
 Project Overview
+
 This project focuses on cleaning and preparing a layoffs dataset using SQL in MySQL. The main objective was to transform raw and inconsistent data into a structured, reliable, and analysis-ready dataset.
 The cleaning process was performed on staging tables to ensure that the original dataset remained unchanged throughout the project.
 
