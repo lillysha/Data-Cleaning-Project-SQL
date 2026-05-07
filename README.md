@@ -1,75 +1,66 @@
-Data Cleaning Project: 
+Layoffs Data Cleaning Project
+Project Overview
+This project focuses on cleaning and preparing a layoffs dataset using SQL in MySQL. The main objective was to transform raw and inconsistent data into a structured, reliable, and analysis-ready dataset.
+The cleaning process was performed on staging tables to ensure that the original dataset remained unchanged throughout the project.
 
-This project focuses on cleaning and preparing a global layoffs dataset using SQL. The dataset contained duplicate records, inconsistent formatting, missing values, and unnecessary data that needed to be standardized before analysis.
-The entire cleaning process was performed using MySQL while preserving the original raw dataset for backup and recovery purposes.
+Objectives
+The project aimed to:
+Remove duplicate records
+Standardize inconsistent values
+Handle null and blank values
+Convert incorrect data formats
+Remove unnecessary columns
+Improve overall data quality for analysis
 
-Project Objective
-The main objective of this project was to transform raw layoffs data into a clean and analysis-ready dataset. The cleaning process improves data quality, consistency, and reliability for future exploratory data analysis (EDA), reporting, and visualization.
+Data Cleaning Process
+1. Creating Staging Tables
+To avoid modifying the original dataset directly, duplicate staging tables were created. All cleaning operations were performed on these temporary tables to maintain data safety and integrity.
 
-STEP 1 : Data Cleaning Process
-1. Creating a Staging Table
-A staging table was created to ensure the original dataset remained untouched during the cleaning process. This is a common industry practice that helps maintain data integrity and provides a backup in case errors occur during transformations.
+2. Removing Duplicate Records
+Duplicate rows were identified using window functions and partitioning techniques. Records containing identical values across important columns were detected and removed to ensure uniqueness within the dataset.
 
-STEP : 2 Removing Duplicate Records
-Duplicate rows were identified using window functions and row numbering techniques. Records containing identical values across important columns were treated as duplicates.
-A temporary helper column was used to assign row numbers to duplicate groups, allowing duplicate entries to be safely removed while retaining the original record.
-
-STEP : 3 Standardizing Data
-Several inconsistencies were found within the dataset and standardized to improve uniformity.
-Industry Standardization
-Different naming variations for the same industry were unified into a single consistent format. Blank values were converted into null values for easier handling.
-Country Standardization
-Formatting inconsistencies in country names were corrected by removing unnecessary punctuation and spacing.
+3. Standardizing the Data
+Several inconsistencies were found in the dataset and corrected during this stage.
+Company Names
+Extra spaces and formatting inconsistencies in company names were cleaned.
+Industry Names
+Different variations of the same industry category were standardized into a single consistent format.
+Country Names
+Country names containing punctuation inconsistencies were corrected.
 Date Formatting
-Date values originally stored as text were converted into proper date format to support accurate filtering, sorting, and time-series analysis.
+Date values stored as text were converted into proper SQL date format to improve querying and analysis capabilities.
 
-STEP : 4 Handling Missing Values
-Missing and null values were carefully reviewed before making changes.
-Some null values were preserved intentionally because they may still provide analytical value during later analysis stages. Missing industry values were filled where matching company information was available.
+4. Handling Null and Blank Values
+Identifying Missing Data
+Rows containing missing or incomplete information were identified for further processing.
+Replacing Blank Values
+Blank fields were converted into null values to maintain consistency across the dataset.
+Filling Missing Industry Information
+Missing industry values were populated using matching company records whenever possible.
+Removing Irrelevant Rows
+Rows lacking meaningful layoff information were removed from the dataset to improve data quality.
 
-STEP : 5 Removing Unnecessary Data
-Rows containing insufficient information for analysis were removed. Temporary helper columns used during the cleaning process were also deleted after completion to keep the dataset clean and optimized.
+5. Removing Unnecessary Columns
+Temporary columns created during the cleaning process were removed after their purpose was completed, leaving the final dataset clean and optimized.
 
-Final Result :
+Final Outcome
+After completing the cleaning process, the dataset became:
 
-The final cleaned dataset is:
 
-More consistent
-
+More accurate
+Consistent and standardized
 Free from duplicate records
-
-Properly formatted
-
 Easier to analyze
+Better suited for data analysis and visualization projects
 
-Ready for exploratory data analysis and visualization
-
-Skills and Concepts Used
-This project demonstrates practical SQL data cleaning techniques, including:
-
-Data staging
-
-Duplicate detection
-
-Data standardization
-
-Null value handling
-
-Data transformation
-
-Table modification
-
-Data quality improvement
-
+Skills Demonstrated
+SQL Data Cleaning
+Data Standardization
+Handling Missing Values
+Duplicate Removal
 
 Tools Used
 MySQL
 
-
-
-
-
-
 Conclusion
-This project highlights the importance of data cleaning as a critical step in the data analysis workflow. Clean and standardized data ensures more accurate insights, better reporting, and reliable decision-making.
-The cleaned layoffs dataset is now prepared for further analysis, trend identification, and business intelligence reporting.
+This project demonstrates practical data cleaning techniques commonly used in real-world data analysis workflows. By cleaning and standardizing the layoffs dataset, the data became more reliable and suitable for further exploratory analysis and business insights generation.
